@@ -54,8 +54,20 @@ const ctaImage = document.getElementById("cta-img");
 
 // Getting Main Content Elements
 const mainContent = document.querySelector(".main-content");
-const topContenth4 = document.querySelector(".top-content .text-content h4");
-const topContentText = document.querySelector(".top-content .text-content p");
+const topContenth4 = document.querySelectorAll(".top-content .text-content h4");
+const topContentText = document.querySelectorAll(".top-content .text-content p");
+const middleImage = document.getElementById("middle-img");
+const btmContentH4 = document.querySelectorAll(".bottom-content .text-content h4");
+const btmContentText = document.querySelectorAll(".bottom-content .text-content p");
+
+// Getting Contact Elements
+const contactH4 = document.querySelector(".contact h4");
+const contactText = document.querySelectorAll(".contact p");
+
+// Getting Footer Text
+const footer = document.querySelector("footer > p");
+
+
 
 //Setting innter text content for nav links
 for (let i = 0; i < allNavLinks.length; i++) {
@@ -70,7 +82,27 @@ header.innerText = siteContent.cta["h1"];
 ctaButton.innerText = siteContent.cta["button"];
 ctaImage.src = siteContent.cta["img-src"];
 
-// Setting Main Content
-topContenth4.innerText = siteContent["main-content"]["features-h4"];
-topContentText.innerText = siteContent["main-content"]["features-content"];
+// Setting Top Content of Main Content
+topContenth4[0].innerText = siteContent["main-content"]["features-h4"];
+topContentText[0].innerText = siteContent["main-content"]["features-content"];
+topContenth4[1].innerText = siteContent["main-content"]["about-h4"];
+topContentText[1].innerText = siteContent["main-content"]["about-content"];
 
+// Setting Middle Image
+middleImage.src = siteContent["main-content"]["middle-img-src"];
+
+btmContentH4[0].innerText = siteContent["main-content"]["services-h4"];
+btmContentH4[1].innerText = siteContent["main-content"]["product-h4"];
+btmContentH4[2].innerText = siteContent["main-content"]["vision-h4"];
+btmContentText[0].innerText = siteContent["main-content"]["services-content"];
+btmContentText[1].innerText = siteContent["main-content"]["product-content"];
+btmContentText[2].innerText = siteContent["main-content"]["vision-content"];
+
+// Setting Contact section
+contactH4.innerText = siteContent.contact["contact-h4"];
+contactText[0].innerText = siteContent.contact["address"];
+contactText[1].innerText = siteContent.contact["phone"];
+contactText[2].innerText = siteContent.contact["email"];
+
+// Setting Footer Text
+footer.innerText = siteContent.footer["copyright"];
