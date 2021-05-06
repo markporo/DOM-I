@@ -69,11 +69,30 @@ const footer = document.querySelector("footer > p");
 
 
 
+//Append Child
+const navigation = document.querySelector("nav");
+const testimonialsNav = document.createElement("a");
+testimonialsNav.textContent = "Testimonials"
+navigation.appendChild(testimonialsNav);
+
+//prpend child
+const homeNav = document.createElement("a");
+homeNav.textContent = "Home"
+navigation.prepend(homeNav);
+
+
+
 //Setting innter text content for nav links
 for (let i = 0; i < allNavLinks.length; i++) {
-  allNavLinks[i].textContent = siteContent.nav["nav-item-" + i];
-  console.log(allNavLinks[0]);
+  allNavLinks[i].textContent = siteContent.nav["nav-item-" + (i + 1)];
+  allNavLinks[i].style.color = "green";
+  allNavLinks[i].style.textDecoration = "none";
 }
+homeNav.style.color = "green";
+homeNav.style.textDecoration = "none";
+testimonialsNav.style.color = "green";
+testimonialsNav.style.textDecoration = "none";
+
 //allNavLinks[0].textContent = siteContent.nav["nav-item-1"];
 
 
@@ -106,3 +125,22 @@ contactText[2].innerText = siteContent.contact["email"];
 
 // Setting Footer Text
 footer.innerText = siteContent.footer["copyright"];
+
+
+// Adding New Content
+// change nav text to be green in for loop
+// appending and prepending above for loop 
+
+
+//My changes
+//changed text decoration to none in for loop
+//updated year to current year
+let date = new Date();
+let currentYear = date.getFullYear();
+footer.innerText = `Copyright Great Idea! ${currentYear}`;
+
+// change background color to whitesmoke
+document.body.style.backgroundColor = "whitesmoke";
+
+// break up address
+
