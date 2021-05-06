@@ -142,5 +142,6 @@ footer.innerText = `Copyright Great Idea! ${currentYear}`;
 // change background color to whitesmoke
 document.body.style.backgroundColor = "whitesmoke";
 
-// break up address
+
+
 
