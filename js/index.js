@@ -44,6 +44,8 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 //* [ ] Create selectors by using any of the DOM element's methods
 const allNavLinks = document.querySelectorAll("a");
 
+allNavLinks.forEach(nav => { nav.style = "color: green; text-decoration: none" });
+
 allNavLinks[0].textContent = siteContent.nav["nav-item-1"];
 allNavLinks[1].textContent = siteContent.nav["nav-item-2"];
 allNavLinks[2].textContent = siteContent.nav["nav-item-3"];
@@ -115,3 +117,15 @@ email.textContent = siteContent["contact"].email;
 const footer = document.querySelector("footer p");
 
 footer.textContent = siteContent.footer.copyright;
+
+
+const ctaText = document.querySelector(".cta-text");
+var newButton = document.createElement("button");
+newButton.textContent = "Then Get Started"
+ctaText.appendChild(newButton);
+
+
+const contact = document.querySelector(".contact");
+const newP = document.createElement("p");
+newP.textContent = "Give me a call.  You know you want to!"
+contact.prepend(newP);
